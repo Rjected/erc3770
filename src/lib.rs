@@ -2,15 +2,16 @@
 use alloy_chains::NamedChain;
 use alloy_primitives::Address;
 
-use core::fmt::{Display, Formatter};
-use core::format_args;
+use core::{
+    fmt::{Display, Formatter},
+    format_args,
+};
 
 /// Create an ERC-3770 chain-specific address.
 ///
 /// This will construct an address format based on the following semantics:
 /// * `shortName` is mandatory and MUST be a valid chain short name from <https://github.com/ethereum-lists/chains>
-/// * `address` is mandatory and MUST be a
-///   [ERC-55](https://github.com/ethereum/ERCs/blob/e83c0862bce4ae2b53db5ea4ce26799b1e3cfe20/ERCS/erc-55.md)
+/// * `address` is mandatory and MUST be a [ERC-55](https://github.com/ethereum/ERCs/blob/e83c0862bce4ae2b53db5ea4ce26799b1e3cfe20/ERCS/erc-55.md)
 ///   compatible hexadecimal address
 pub fn create_address(chain: NamedChain, address: Address) -> Result<String, ChainListError> {
     Ok(format!("{}:{address}", chain.chain_short_name()?))
