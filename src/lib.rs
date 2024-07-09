@@ -72,10 +72,12 @@ impl ChainListName for NamedChain {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
     fn test_basic_eth_poly_base_fmt() {
+        use super::create_address;
+        use alloy_chains::NamedChain;
+        use alloy_primitives::Address;
+
         let address = Address::repeat_byte(0x42);
         assert_eq!(
             &create_address(NamedChain::Mainnet, address).unwrap(),

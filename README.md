@@ -2,6 +2,27 @@
 
 Implements a helper method for [ERC-3770](https://github.com/ethereum/ERCs/blob/e83c0862bce4ae2b53db5ea4ce26799b1e3cfe20/ERCS/erc-3770.md)
 
+## Example
+```rust
+use erc3770::create_address;
+use alloy_chains::NamedChain;
+use alloy_primitives::Address;
+
+let address = Address::repeat_byte(0x42);
+assert_eq!(
+    &create_address(NamedChain::Mainnet, address).unwrap(),
+    "eth:0x4242424242424242424242424242424242424242"
+);
+assert_eq!(
+    &create_address(NamedChain::Polygon, address).unwrap(),
+    "matic:0x4242424242424242424242424242424242424242"
+);
+assert_eq!(
+    &create_address(NamedChain::Base, address).unwrap(),
+    "base:0x4242424242424242424242424242424242424242"
+);
+```
+
 #### License
 
 <sup>
