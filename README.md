@@ -1,6 +1,6 @@
 # erc3770
 
-Implements a helper method for [ERC-3770](https://github.com/ethereum/ERCs/blob/e83c0862bce4ae2b53db5ea4ce26799b1e3cfe20/ERCS/erc-3770.md)
+Implements a 🔥 _blazingly fast_ 🔥 helper method for [ERC-3770](https://github.com/ethereum/ERCs/blob/e83c0862bce4ae2b53db5ea4ce26799b1e3cfe20/ERCS/erc-3770.md) in Rust™
 
 ## Example
 ```rust
